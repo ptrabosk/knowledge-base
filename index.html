@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Google Drive Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <div class="top-bar">
+      <div class="logo-area">
+        <img src="https://via.placeholder.com/100x30?text=Viewer" alt="Logo" class="logo-img">
+      </div>
+    </div>
+    <div class="main-content">
+      <aside class="left-panel" id="sidebar"><p>Loading Google Drive...</p></aside>
+      <main class="chat-panel">
+        <div id="docViewer" style="padding: 20px; overflow-y: auto; height: 100%;"></div>
+      </main>
+      <aside class="right-panel">
+        <div class="right-panel-static"></div>
+        <div class="templates-scroll-area"></div>
+      </aside>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
