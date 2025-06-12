@@ -1,5 +1,5 @@
 const CLIENT_ID = '496131599054-k4td976vo0i5kumt3kugep8ao5b7jco9.apps.googleusercontent.com';
-const SCOPES = 'https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/presentations.readonly https://www.googleapis.com/auth/documents.readonly https://www.googleapis.com/auth/spreadsheets.readonly';
+const SCOPES = 'https://www.googleapis.com/auth/drive.readonly';
 
 function log(msg) {
   console.log(msg);
@@ -11,11 +11,7 @@ function initAuth() {
     gapi.client.init({
       clientId: CLIENT_ID,
       scope: SCOPES,
-      discoveryDocs: [
-        'https://slides.googleapis.com/$discovery/rest?version=v1',
-        'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest',
-        'https://docs.googleapis.com/$discovery/rest?version=v1'
-      ]
+      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest']
     }).then(() => {
       document.getElementById('loginBtn').addEventListener('click', () => {
         gapi.auth2.getAuthInstance().signIn()
